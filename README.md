@@ -32,7 +32,7 @@ Five independent measures showed the agreeable team was not more convinced, it w
 | Sentiment smoothing, dissent hidden behind a positive tone | Challengers net negative (-0.12), 0.71 agreement words per 100 | Challengers strongly positive (+0.43), 1.89 agreement words per 100 |
 | Echo toward the leader | Similarity to CEO about 0.02 to 0.07 | Similarity to leader about 0.19 to 0.23, roughly 3 times higher |
 | Premature convergence, false consensus | Similarity among challengers 0.034 rising to 0.060 | 0.067 rising to 0.106, about twice as convergent |
-| Topic narrowing, strategic blind spots | 33% strategy vocabulary | 17% strategy vocabulary, 83% execution |
+| Topic narrowing, strategic blind spots | About 34% strategy vocabulary | About 18% strategy vocabulary, the rest execution |
 | Confidence inflation | Plan scored 6.1 | Plan scored 7.8 |
 
 <p>
@@ -72,7 +72,7 @@ The two debates can be read in full on Claude.
 
 ## How it was built
 
-Both debates were run on Claude Opus 5 with high reasoning, so differences between them are not a model artefact. The analysis runs in Google Colab on Python 3 with VADER, scikit-learn and the sentence-transformers model all-MiniLM-L6-v2, with a TF-IDF fallback. Claude was used throughout the project, from building the case and running the debates to writing and debugging the analysis code.
+Both debates were run on Claude Opus 5 with high reasoning, so differences between them are not a model artefact. The analysis runs in Google Colab on Python 3 with VADER and scikit-learn. The similarity step tries the sentence-transformers model all-MiniLM-L6-v2 first and falls back to TF-IDF vectors if the model cannot be downloaded. The saved run in this notebook used the TF-IDF fallback, and the report notes the findings hold under both methods. The report rounds a few figures slightly differently from the notebook output, for example 33% and 17% for the strategy share. Claude was used throughout the project, from building the case and running the debates to writing and debugging the analysis code.
 
 ## Limitations
 
